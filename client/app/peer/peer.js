@@ -21,8 +21,6 @@ angular.module('forinlanguages.peer', [])
     $scope.url = "/p/" + id;
     $scope.$digest();
 
-    console.log($scope.me);
-
     $scope.me.on('connection', function(c) {
       $scope.handleConnection(c);
     });
@@ -64,9 +62,12 @@ angular.module('forinlanguages.peer', [])
       },
       function(data) {
         if(data.type === "file") {
-          var arr = new Uint8Array(data.rawdat);
-          var blob = new Blob([arr]);
-          saveAs(blob, data.filename);
+          $localForage.setItem("bigblob_" + data.filename, new Blob([new Uint8Array(data.rawdat)])).then(function(item) {
+            saveAs(item, data.filename);
+          });
+          // var arr = new Uint8Array(data.rawdat);
+          // var blob = new Blob([arr]);
+          // saveAs(blob, data.filename);
         } else if (data.type === "file-chunk" || data.type === "file-chunk-last") {
           var name = data.name;
           if(meta[name] === undefined) {
@@ -84,21 +85,21 @@ angular.module('forinlanguages.peer', [])
             // To help with garbage collection.
             // delete data;
             // console.log('deleted data');
-            console.log("BOOL", meta[name].bool);
-            console.log("WANT:", meta[name].want);
-            console.log("NEED:", meta[name].need);
             if(meta[name].bool && (meta[name].want == (meta[name].need))) {
-              console.log("GOT IN HERE")
               $localForage.setItem("array_" + name, []).then(function(arr) {
-                console.log("made the big array")
                 $localForage.iterate(function(val, key) {
                   if(key.indexOf("RECEIVED" + name) !== -1) {
                     arr[parseInt(key.slice(0, key.indexOf("RECEIVED"))) - 1] = val;
                     $localForage.removeItem(key);
                   }
                 }).then(function() {
-                  $localForage.setItem('bigblob_' + name, new Blob(arr)).then(function(inner) {
+                  $localForage.setItem('bigblob_' + name, new Blob(arr))
+                  .then(function(inner) {
                     saveAs(inner, name);
+                  })
+                  .then(function() {
+                    $localForage.removeItem('bigblob_' + name);
+                    $localForage.removeItem('array_' + name);
                   });
                 });
               })
@@ -128,7 +129,7 @@ angular.module('forinlanguages.peer', [])
       $scope.messages.push(dataToSend);
     } else if (type === "file") {
       for(var x = 0; x < $scope.file.length; x++) {
-        if($scope.file[x].size < (16 * 1000 * 1000)) {
+        if($scope.file[x].size < (16 * 1024 * 1024)) {
           PeerFactory.sendData({
             rawdat: $scope.file[x],
             time: moment().format('h:mm:ss a'),
@@ -157,6 +158,12 @@ angular.module('forinlanguages.peer', [])
                 }, $scope.peers);
               }
             }
+          }).then(function() {
+            $localForage.iterate(function(val, key) {
+              if(key.indexOf("SENT" + meta.name) !== -1) {
+                $localForage.removeItem(key);
+              }
+            })
           });
         });
       }
