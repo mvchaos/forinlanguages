@@ -1,4 +1,5 @@
-angular.module('forinlanguages.services', [])
+angular.module('forinlanguages.services', [
+  'ui.router'])
 
 .factory('PeerFactory', function($localForage) {
 
@@ -107,3 +108,47 @@ angular.module('forinlanguages.services', [])
     chunker: chunker
   }
 })
+
+.config(function($stateProvider, $urlRouterProvider) {
+  $urlRouterProvider.otherwise('/login');
+  $stateProvider
+    .state('login', {
+      url: '/login',
+      templateUrl: 'partials/login.html',
+      controller: 'loginController'
+    })
+    .state('main', {
+      url: '/main',
+      templateUrl: 'partials/main',
+      controller: 'mainController'
+    })
+    .state('signup', {
+      url: '/signup',
+      templateUrl: 'partials/signup',
+      controller: 'signupController'
+    })
+       .state('stats', {
+      url: '/stats',
+      templateUrl: 'partials/stats',
+      controller: 'statsController'
+    })
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
