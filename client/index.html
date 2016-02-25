@@ -10,6 +10,7 @@
     <link rel='stylesheet' href="lib/semantic/dist/semantic.min.css"/>
     <script src="lib/angular/angular.min.js"></script>
     <script src="lib/angular-file-model/angular-file-model.js"></script>
+    <script src="lib/angular-ui-router/angular-ui-router.js"></script>
     <script src="assets/peer.js"></script>
     <script src="lib/moment/min/moment.min.js"></script>
     <script src="lib/file-saver.js/FileSaver.js"></script>
@@ -27,7 +28,10 @@
     <script src="app/login/login.js"></script>
     <script src="app/application.js"></script>
   </head>
-  <body ng-controller="PeerController" class = "container">
+  <body>
+    <div ng-view></div>
+  </body>
+<!--   <body ng-controller="PeerController" class = "container">
 
     <div></div>
     <div class ="ui two column doubling stackable grid container">
@@ -119,3 +123,4 @@
         </div>
         <div ui-view></div>
     </body>
+
