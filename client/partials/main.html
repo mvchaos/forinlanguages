@@ -1,7 +1,5 @@
 <div id="main">
     <div class = "container">
-
-    <div></div>
     <div class ="ui two column doubling stackable grid container">
 
     <div class ="column">
@@ -43,8 +41,9 @@
 
         </div>
         <h3>Share files</h3>
-        <input type="file" value="choosefile" file-model='file' multiple>
-<br>
+        <input type="file" value="choosefile" file-model='file' multiple><br>
+        <button ng-click="sendData('file')">Send File</button>
+
   <div class="barsWrapper">
     <div class="wrapperLabel">
       file transfers
@@ -72,7 +71,7 @@
             <div> Enter Chat messages</div>
             <textarea name="message" id="textInput" ng-model='message' ng-keypress="isEnter($event,sendData,['message'])" required></textarea>
             <div>{{ test }} </div>
-            <button type='submit'>Send</button>
+            <button type='submit'>Send Message</button>
           </form>
 
 
@@ -101,8 +100,8 @@
           </div>
 
         </div>
-<h1>{{test}}</h1>
     </div>
   <a ui-sref="stats">view user stats</a>
 </div>
 </div>
+
