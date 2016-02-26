@@ -120,7 +120,7 @@ angular.module('forinlanguages.services', [
     .state('main', {
       url: '/main',
       templateUrl: 'partials/main.html',
-      controller: 'PeerController'
+      controller: 'mainController'
     })
     .state('signup', {
       url: '/signup',
