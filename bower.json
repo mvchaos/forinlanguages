@@ -29,8 +29,7 @@
     "angular-localforage": "^1.2.5",
     "underscore": "^1.8.3",
     "FileSaver": "https://github.com/Teleborder/FileSaver.js",
-    "semantic": "^2.1.8",
-    "angular-ui-router": "ui-router#~0.2.18"
+    "semantic": "^2.1.8"
   },
   "resolutions": {
     "angular": "^1.5.0",
