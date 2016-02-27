@@ -8,16 +8,7 @@ angular.module('forinlanguages.main', [])
   $scope.username = "";
   $scope.url = "";
   $scope.me = {};
-  $scope.newUser = {};
-  //handle new username submit
-  $scope.register = function() {
-    console.log($scope.newUser);
-    return $http({
-      method: 'POST',
-      url: '/register/newuser',
-      data: $scope.newUser
-    });
-  };
+
   // Object of connected peers and messages received/send
   $scope.peers = {};
   $scope.messages = [];

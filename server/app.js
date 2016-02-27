@@ -5,12 +5,10 @@ var fs = require('fs');
 var app = express();
 var port = process.env.PORT || 3000
 var db = require('./db/database.js');
-var bcrypt = require('bcrypt');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../client')));
-app
 
 // app.get('/p/*', function (req, res){
 //     console.log("hello");
