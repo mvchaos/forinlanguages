@@ -3,7 +3,6 @@ angular.module('forinlanguages.main', [])
 .controller('mainController', function($scope, $window, $location, $localForage, PeerFactory) {
 
   $scope.bars = PeerFactory.bars;
-
   $scope.person = "";
   $scope.message = "";
   $scope.username = "";
