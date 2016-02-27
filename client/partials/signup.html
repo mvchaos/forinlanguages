@@ -1,12 +1,28 @@
-<div id="signup">
-  <p id="signupHeader">signup<p>
-  <input type="text" placeholder="username" ng-model="newUser.signupUN">
+<div id="signup" class="ui middle aligned center aligned grid">
+  <div class="column">
   <br>
-  <input type="password" placeholder="password" ng-model="newUser.signupPW">
   <br>
-  <input type="password" placeholder="password" ng-model="passwordTwo">
+  <p id="signupHeader" class="ui huge header">signup<p>
+  <div class="ui input">
+    <input type="text" placeholder="username" ng-model="newUser.signupUN">
+  </div>
   <br>
-  <input type="email" placeholder="email" ng-model="email">
   <br>
-  <button id="signupButton" ng-click="signup()">signup</button>
+  <div class="ui input">
+    <input type="password" placeholder="password" ng-model="newUser.signupPW">
+  </div>
+  <br>
+  <br>
+  <div class="ui input">
+    <input type="password" placeholder="password" ng-model="passwordTwo">
+  </div>
+  <br>
+  <br>
+  <div class="ui input">
+    <input type="email" placeholder="email" ng-model="email">
+  </div>
+  <br>
+  <br>
+  <button id="signupButton" class="ui button" ng-click="signup()">signup</button>
+</div>
 </div>
