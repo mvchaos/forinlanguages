@@ -1,11 +1,22 @@
-<div id="loginHolder">
-  <p id="loginHeader">login<p>
-  <input type="text" placeholder="username" ng-model="username">
+<div id="loginHolder" class="ui middle aligned center aligned grid">
+  <div class="column">
   <br>
-  <input type="password" placeholder="password" ng-model="password">
   <br>
-  <button id="loginButton" ng-click="login()">login</button>
+  <p id="loginHeader" class="ui huge header">login<p>
+  <div class="ui input">
+    <input type="text" placeholder="username" ng-model="username">
+  </div>
+  <br>
+  <br>
+  <div class="ui input">
+    <input type="password" class="ui input" placeholder="password" ng-model="password">
+  </div>
+  <br>
+  <br>
+  <button class="ui button" id="loginButton" ng-click="login()">login</button>
+  <br>
   <br>
   <a ui-sref="signup">signup</button>
+  </div>
 </div>
 <!-- <h1>{{test}}</h1> -->

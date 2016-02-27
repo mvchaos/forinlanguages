@@ -31,25 +31,18 @@ textarea {
 }
 #header h1 {
     text-align: center;
+    font-size : xx-large;
 }
 #header p {
     text-align : right;
+    margin : 10px;
+    padding : 10px;
 }
-
-#login {
-
+#header a {
+    color : gray;
 }
-
-#signup {
-
-}
-
-#main {
-
-}
-
-#stats {
-
+#header a:hover {
+    color : white;
 }
 
 .outline {
