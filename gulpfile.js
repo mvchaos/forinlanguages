@@ -12,4 +12,11 @@ gulp.task('e2e', function(){
   .on('error', function(err) { throw err })
 });
 
-gulp.task('default', ['e2e', 'watch']);
+gulp.task('watch', function(){
+  gulp.watch('client/**/*.js', function(event){
+    console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
+  });
+  gulp.watch('client/**/*.js');
+});
+
+gulp.task('default', ['watch']);
