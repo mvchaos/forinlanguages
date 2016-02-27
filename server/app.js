@@ -24,19 +24,35 @@ app.use(express.static(path.join(__dirname, '../client')));
 // });
 app.listen(port);
 
+//route for signing in
+// app.post('/register/newuser', function(req, res) {
+//   console.log(req.body);
+
+//   var answer = db.query('INSERT INTO users (username, password) values ("' + req.body.signupUN + '", "' + req.body.signupPW + '")', function(err, rows) {
+//     if (err) throw err;
+
+//     db.query('SELECT * from users', function(err, rows) {
+//       if (err) throw err;
+
+//       console.log('Data received:');
+//       console.log(rows);
+//     });
+//   });
+// });
+
 //route for registering new users
 app.post('/register/newuser', function(req, res) {
   console.log(req.body);
 
   var answer = db.query('INSERT INTO users (username, password) values ("' + req.body.signupUN + '", "' + req.body.signupPW + '")', function(err, rows) {
     if (err) throw err;
+    console.log('Data received');
+    // db.query('SELECT * from users', function(err, rows) {
+    //   if (err) throw err;
 
-    db.query('SELECT * from users', function(err, rows) {
-      if (err) throw err;
-
-      console.log('Data received:');
-      console.log(rows);
-    });
+    //   console.log('Data received:');
+    //   console.log(rows);
+    // });
   });
 });
 

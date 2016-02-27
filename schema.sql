@@ -4,9 +4,10 @@
 
 -- SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- SET FOREIGN_KEY_CHECKS=0;
-CREATE DATABASE fileData;
+CREATE DATABASE IF NOT EXISTS fileData;
 
 USE fileData;
+
 -- ---
 -- Table 'Users'
 --
@@ -15,7 +16,7 @@ USE fileData;
 DROP TABLE IF EXISTS `Users`;
 
 CREATE TABLE `Users` (
-  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `id` INTEGER AUTO_INCREMENT,
   `username` VARCHAR(20) NULL DEFAULT NULL,
   `password` VARCHAR(30) NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -29,7 +30,7 @@ CREATE TABLE `Users` (
 DROP TABLE IF EXISTS `file`;
 
 CREATE TABLE `file` (
-  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `id` INTEGER AUTO_INCREMENT,
   `filename` VARCHAR(45) NULL DEFAULT NULL,
   `filesize` INT(4) NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -43,7 +44,7 @@ CREATE TABLE `file` (
 DROP TABLE IF EXISTS `transfers`;
 
 CREATE TABLE `transfers` (
-  `id` INTEGER NULL DEFAULT NULL,
+  `id` INTEGER AUTO_INCREMENT,
   `receiver` INTEGER NULL DEFAULT NULL,
   `sender` INTEGER NULL DEFAULT NULL,
   `file` INTEGER NULL DEFAULT NULL,
@@ -71,8 +72,7 @@ ALTER TABLE `transfers` ADD FOREIGN KEY (file) REFERENCES `file` (`id`);
 -- Test Data
 -- ---
 
--- INSERT INTO `Users` (`id`,`username`,`password`) VALUES
--- ('','','');
+INSERT INTO `Users` (`id`,`username`,`password`) VALUES ('dnovograd', 'testtest');
 -- INSERT INTO `file` (`id`,`filename`,`filesize`) VALUES
 -- ('','','');
 -- INSERT INTO `transfers` (`id`,`receiver`,`sender`,`file`,`date`) VALUES
