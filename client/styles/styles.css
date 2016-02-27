@@ -24,3 +24,61 @@ textarea {
     padding-top: 25px;
     margin: 10px;
 }
+
+#header {
+    background-color : black;
+    color : white;
+}
+#header h1 {
+    text-align: center;
+}
+#header p {
+    text-align : right;
+}
+
+#login {
+
+}
+
+#signup {
+
+}
+
+#main {
+
+}
+
+#stats {
+
+}
+
+.outline {
+    border : solid red 1px;
+}
+
+.barsWrapper {
+    padding : 5px;
+}
+.wrapperLabel {
+    text-align : center;
+}
+
+.barWrapper {
+    width : 90%;
+    margin : auto;
+    padding : 5px;
+}
+
+.barIndicator {
+    background-color : gray;
+    color : white;
+    text-align : center;
+    border-radius : 5px;
+    padding : 5px;
+}
+
+.barLabel {
+    text-align : center;
+    color : black;
+    padding : 5px;
+}

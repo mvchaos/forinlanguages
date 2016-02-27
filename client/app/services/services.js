@@ -1,6 +1,12 @@
-angular.module('forinlanguages.services', [])
+angular.module('forinlanguages.services', [
+  'ui.router'])
 
 .factory('PeerFactory', function($localForage) {
+  var bars = [
+    // { filename : "file one"},
+    // { filename : "file two"},
+    // { filename : "file three"},
+  ];
 
   var makePeer = function(cb) {
     var newurl;
@@ -22,6 +28,7 @@ angular.module('forinlanguages.services', [])
     console.log("connection:", c);
     c.on('data', function(data) {
       console.log("Got data", data);
+      bars.push({'filename':data.filename});    // add sent/sending file to list of files
       if(data.type === "message") {
         msgCb(data);
       } else if(data.type === "file") {
@@ -45,6 +52,7 @@ angular.module('forinlanguages.services', [])
 
   var sendData = function(data, peers) {
     console.log("Sending:", data);
+    bars.push({'filename':data.filename});  // add sent/sending file to list of files
     for(var x in peers) {
       peers[x].send(data);
     }
@@ -87,7 +95,7 @@ angular.module('forinlanguages.services', [])
               });
             }
             // Let the caller know we've finished.
-            return cb(meta.name);
+            return cb(meta.name, meta.totalChunks);
           });
         } else {
           // Recurse and save next chunk
@@ -104,6 +112,33 @@ angular.module('forinlanguages.services', [])
     handleConnection: handleConnection,
     connectTo: connectTo,
     sendData: sendData,
-    chunker: chunker
+    chunker: chunker,
+    bars: bars
   }
+})
+
+.config(function($stateProvider, $urlRouterProvider) {
+  $urlRouterProvider.otherwise('/login');
+  $stateProvider
+    .state('login', {
+      url: '/login',
+      templateUrl: 'partials/login.html',
+      controller: 'loginController'
+    })
+    .state('main', {
+      url: '/main',
+      templateUrl: 'partials/main.html',
+      controller: 'mainController'
+    })
+    .state('signup', {
+      url: '/signup',
+      templateUrl: 'partials/signup.html',
+      controller: 'signupController'
+    })
+       .state('stats', {
+      url: '/stats',
+      templateUrl: 'partials/stats.html',
+      controller: 'statsController'
+    })
+
 })
