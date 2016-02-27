@@ -69,9 +69,14 @@ npm install -g protractor
 
 Update & start webdriver
 ```bash
-webdriver-manager update
+webdriver-manager update <-- if you haven't alreadly updated
 
 webdriver-manager start
+```
+
+Start protractor
+```bash
+protractor client/specs/conf.js
 ```
 
 
