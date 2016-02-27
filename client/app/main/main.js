@@ -132,9 +132,16 @@ angular.module('forinlanguages.main', [])
       $scope.message = "";
     } else if (type === "file") {
       for(var x = 0; x < $scope.file.length; x++) {
+<<<<<<< 6f7d3936f56d0302ebbc9541f43e741b05ef2a1f
         if($scope.file[x].size > (2 * 1024 * 1024)) {
           alert('too big file')
         } else {
+=======
+        if($scope.file[x].size > (200 * 1024 * 1024)) {
+          return alert('Too big file')
+        }
+        else if($scope.file[x].size < (16 * 1024 * 1024)) {
+>>>>>>> add sendFile functional button
           PeerFactory.sendData({
             rawdat: $scope.file[x],
             time: moment().format('h:mm:ss a'),
