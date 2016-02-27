@@ -1,10 +1,10 @@
 var mysql = require('mysql');
 
 var connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "fileData"
+  host: "us-cdbr-iron-east-03.cleardb.net",
+  user: "bcec4e36a8041f",
+  password: "6bc9a6f7",
+  database: "heroku_cbbeaa791774cef"
 });
 
 connection.connect(function(err) {
