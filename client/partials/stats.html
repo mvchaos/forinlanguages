@@ -1,9 +1,12 @@
-<div id="stats">
-  <p id="statsHeader">stats</p>
+<div id="stats"class="ui middle aligned center aligned grid">
+  <div class="column">
+  <p id="statsHeader" class="ui huge header">stats</p>
+  <p><a ui-sref="main">back to main</a></p>
   <p>uploads : {{ uploadNumber }} : {{ uploadSize }}</p>
   <p>downloads : {{ downloadNumber }} : {{ downloadSize }}</p>
-  <!-- use a table instead? -->
+
   <ul>
     <li ng-repeat="file in files"></li>
   </ul>
+  </div>
 </div>
