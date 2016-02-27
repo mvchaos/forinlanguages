@@ -1,7 +1,7 @@
 angular.module('forinlanguages.main', [])
 
 .controller('mainController', function($scope, $window, $location, $localForage, PeerFactory) {
-  
+
   $scope.bars = PeerFactory.bars;
 
   $scope.person = "";
@@ -132,7 +132,10 @@ angular.module('forinlanguages.main', [])
       $scope.message = "";
     } else if (type === "file") {
       for(var x = 0; x < $scope.file.length; x++) {
-        if($scope.file[x].size < (16 * 1024 * 1024)) {
+        if($scope.file[x].size > (2 * 1024 * 1024)) {
+          return alert('Too big file')
+        }
+        else if($scope.file[x].size < (16 * 1024 * 1024)) {
           PeerFactory.sendData({
             rawdat: $scope.file[x],
             time: moment().format('h:mm:ss a'),
@@ -143,14 +146,15 @@ angular.module('forinlanguages.main', [])
           continue;
         }
         // Both assigns metadata required later and does the chunking
-        var bool = false, want = 0;
-        PeerFactory.chunker($scope.file[x], $scope.peers, function(name) {
-          console.log("Completed chunking/sending of file " + name);
-        });
+        // var bool = false, want = 0;
+        // PeerFactory.chunker($scope.file[x], $scope.peers, function(name) {
+        //   console.log("Completed chunking/sending of file " + name);
+        // });
       }
-    } else {
-      alert("you screwed up");
     }
+    // else {
+    //   alert("you screwed up");
+     //}
   };
   $scope.isEnter = function(envent, func, arg){
     console.log("listening to keys");
@@ -191,10 +195,10 @@ angular.module('forinlanguages.main', [])
     $localForage.clear();
   };
 
-  $scope.$watch('file', function (files, old) {
-    if(files !== old) {
-      $scope.sendData("file");
-    }
-  });
+  // $scope.$watch('file', function (files, old) {
+  //   if(files !== old) {
+  //     $scope.sendData("file");
+  //   }
+  // });
 
 })
