@@ -1,3 +1,7 @@
+#For-In Languages
+For-In Languages is a simple P2P filesharing that uses WebRTC.
+
+
 # Send-Air
 WebRTC based P2P filesharing app.
 [Send-Air](https://sendair.herokuapp.com/)
@@ -48,37 +52,3 @@ Please refer to the [STYLE-GUIDE.md](documentation/STYLE-GUIDE.md) file to see o
 - Darko ([Darko](https://github.com/eternal44))
 - Arlen Neylon ([Arlen Neylon](https://github.com/aneylon))
 
-=======
-## TESTS
-We extracted the following instructions from [Angular
-Docs](http://angular.github.io/protractor/#/tutorial).
-
-Check if you have the following.  If you don't: install it first and
-run these commands again.
-
-```bash
-node --version
-
-java -version
-```
-
-Install protractor
-```bash
-npm install -g protractor
-```
-
-Update & start webdriver
-```bash
-webdriver-manager update <-- if you haven't alreadly updated
-
-webdriver-manager start
-```
-
-Start protractor
-```bash
-protractor client/specs/conf.js
-```
-
-
-
-#IF YOU DO THIS PROJECT, FIX THE MEMORY LEAK BUG FIRST
