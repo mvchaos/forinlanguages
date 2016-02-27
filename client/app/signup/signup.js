@@ -1,16 +1,9 @@
 angular.module('forinlanguages.signup', [])
 
-.controller('signupController', function($scope,$state, $http) {
+.controller('signupController', function($scope,$state) {
   $scope.test = 'signup'
-  $scope.newUser = {};
   $scope.signup = function(){
-     //handle new user submit
-    return $http({
-      method: 'POST',
-      url: '/register/newuser',
-      data: $scope.newUser
-    }).then($state.go('main')
-    );
-  };
-
-  });
+    console.log('signup and login and go to main page');
+    $state.go('main');
+  }
+})
