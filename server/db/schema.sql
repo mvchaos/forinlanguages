@@ -73,7 +73,7 @@ ALTER TABLE `transfers` ADD FOREIGN KEY (file) REFERENCES `file` (`id`);
 -- Test Data
 -- ---
 
-INSERT INTO `Users` (`id`,`username`,`password`) VALUES ('dnovograd', 'testtest');
+-- INSERT INTO `Users` (`id`,`username`,`password`) VALUES ('dnovograd', 'testtest');
 -- INSERT INTO `file` (`id`,`filename`,`filesize`) VALUES
 -- ('','','');
 -- INSERT INTO `transfers` (`id`,`receiver`,`sender`,`file`,`date`) VALUES
