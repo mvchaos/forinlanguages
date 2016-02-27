@@ -7,7 +7,6 @@
 CREATE DATABASE fileData;
 
 USE fileData;
-help
 -- ---
 -- Table 'Users'
 --
