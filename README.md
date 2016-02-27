@@ -10,18 +10,48 @@ WebRTC based P2P filesharing app.
 MKS Legacy Project
 Based on ([forinlanguages](https://github.com/forinlanguages/forinlanguages))
 
-## Introduction 
+## Introduction
 
 This application allows users to share files over an anonomus P2P connection with WebRTC. No data from sent files is stored anywhere.
 
 ## Getting Started
 
 Bower and NPM are used to manage dependencies.
-Once they are installed just run the server with node.
-```
+Once they are installed just run the server with node.``
 bower install
 npm install
-node server/app.js
+nodemon server/app.js
+```
+
+========
+## TESTS
+We extracted the following instructions from [Angular
+Docs](http://angular.github.io/protractor/#/tutorial).
+
+Check if you have the following.  If you don't: install it first and
+run these commands again.
+
+```bash
+node --version
+
+java -version
+```
+
+Install protractor
+```bash
+npm install -g protractor
+```
+
+Update & start webdriver
+```bash
+webdriver-manager update <-- if you haven't alreadly updated
+
+```
+
+Start protractor
+```bash
+webdriver-manager start --standalone
+protractor client/specs/conf.js
 ```
 
 ## Choice of Technologies
