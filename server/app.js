@@ -34,12 +34,14 @@ app.post('/register/newuser', function(req, res) {
     if (err) throw err;
     if (rows.length > 0) {
       console.log("already exists");
-
+      res.sendStatus(500);
+      res.end();
     }
     else {
-      db.query('INSERT INTO users (username, password) values ("' + req.body.signupUN + '", "' + req.body.signupPW + '")', function(err, rows) {
+    db.query('INSERT INTO users (username, password) values ("' + req.body.signupUN + '", "' + req.body.signupPW + '")', function(err, rows) {
     if (err) throw err;
     console.log('New user added');
+    res.send('success');
   })
     }
   });

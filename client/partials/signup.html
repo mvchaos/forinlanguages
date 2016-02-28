@@ -1,10 +1,9 @@
 <div id="signup" class="ui middle aligned center aligned grid">
   <div class="column">
-  <br>
-  <br>
+  already registered</p>
   <p id="signupHeader" class="ui huge header">signup<p>
   <div class="ui input">
-    <input type="text" placeholder="username" ng-model="newUser.signupUN">
+    <input type="text" placeholder="username" ng-model="newUser.signupUN"><p ng-show="alreadyRegistered" style="color: red">
   </div>
   <br>
   <br>
@@ -15,6 +14,7 @@
   <br>
   <div class="ui input">
     <input type="password" placeholder="password" ng-model="passwordTwo">
+    <p ng-show="passMatch" style="color: red">Passwords must match</p>
   </div>
   <br>
   <br>
