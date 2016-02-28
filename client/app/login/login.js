@@ -1,9 +1,20 @@
 angular.module('forinlanguages.login', [])
 
-.controller('loginController', function($scope,$state) {
+.controller('loginController', function($scope,$state, $http) {
   $scope.test = 'login';
+  $scope.credentials = {};
+  $scope.badLogin = false;
   $scope.login = function(){
-    console.log("log in and go to main view");
-    $state.go("main");
-  }
-})
+  //handle login request
+    return $http({
+      method: 'POST',
+      url: '/register/signin',
+      data: $scope.credentials
+    }).then(function(response) {
+      $state.go('main');
+    })
+    .catch(function(err) {
+      $scope.badLogin = true;
+    });
+  };
+});

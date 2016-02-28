@@ -4,19 +4,20 @@
   <br>
   <p id="loginHeader" class="ui huge header">login<p>
   <div class="ui input">
-    <input type="text" placeholder="username" ng-model="username">
+    <input type="text" placeholder="username" ng-model="credentials.username">
   </div>
   <br>
   <br>
   <div class="ui input">
-    <input type="password" class="ui input" placeholder="password" ng-model="password">
+    <input type="password" class="ui input" placeholder="password" ng-model="credentials.password">
   </div>
   <br>
   <br>
   <button class="ui button" id="loginButton" ng-click="login()">login</button>
   <br>
   <br>
-  <a ui-sref="signup">signup</button>
+  <a ui-sref="signup">Sign in</button>
+  <p ng-show="badLogin" style="color:red">Incorrect username and/or password</p>
   </div>
 </div>
 <!-- <h1>{{test}}</h1> -->
