@@ -11,6 +11,14 @@ textarea {
     border: 1px solid black;
 }
 
+#loginHolder {
+    display: block;
+    margin: 0 auto;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+}
+
 #textInput {
     width: 100%;
 }
@@ -74,4 +82,18 @@ textarea {
     text-align : center;
     color : black;
     padding : 5px;
+}
+
+#signupHeader {
+        padding-top: 10%;
+}
+
+#signupButton:hover {
+    background: green;
+    color: white;
+}
+
+#loginButton:hover {
+    background: green;
+    color: white;
 }
