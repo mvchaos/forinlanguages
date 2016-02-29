@@ -12,14 +12,8 @@ if (err) {
   console.error("didn't work");
   return;
 }
-console.log("connected");
+console.log("connected to database");
 });
 
-connection.query('SELECT * from users', function(err,rows) {
-    if (err) throw err;
-
-    console.log('Data received:');
-    console.log(rows[0].username);
-});
 
 module.exports = connection;
