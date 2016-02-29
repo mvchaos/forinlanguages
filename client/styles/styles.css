@@ -2,6 +2,11 @@ textarea {
    resize: none;
 }
 
+#chartHolder {
+    width : 90%;
+    margin : auto;
+}
+
 .messageBoard {
     height: 400px;
     width: 100%;
