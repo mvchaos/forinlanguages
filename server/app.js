@@ -30,6 +30,10 @@ app.post('/register/signin', function(req, res) {
   //query db to see if user exists
   db.query('select username, password from users where username = "' + req.body.username + '"', function(err, rows) {
     if (err) throw err;
+    //if user not found
+    if (rows[0] === undefined) {
+      res.sendStatus(401);
+    }
     //if user found, compare PW input to hashed registration PW
     if (rows[0]) {
       var hash = rows[0].password;

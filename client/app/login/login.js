@@ -4,6 +4,10 @@ angular.module('forinlanguages.login', [])
   $scope.test = 'login';
   $scope.credentials = {};
   $scope.badLogin = false;
+  $scope.loading = false;
+  $scope.load = function() {
+    $scope.loading = true;
+  }
   $scope.login = function(){
   //handle login request
     return $http({
@@ -14,7 +18,9 @@ angular.module('forinlanguages.login', [])
       $state.go('main');
     })
     .catch(function(err) {
+      console.log('error');
       $scope.badLogin = true;
+      $scope.loading = false;
     });
   };
 
