@@ -30,7 +30,8 @@
     "underscore": "^1.8.3",
     "FileSaver": "https://github.com/Teleborder/FileSaver.js",
     "semantic": "^2.1.8",
-    "angular-ui-router": "ui-router#~0.2.18"
+    "angular-ui-router": "ui-router#~0.2.18",
+    "angular-chart.js": "~0.8.8"
   },
   "resolutions": {
     "angular": "^1.5.0",
