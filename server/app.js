@@ -5,7 +5,7 @@ var fs = require('fs');
 var app = express();
 var port = process.env.PORT || 3000
 var db = require('./db/database.js');
-var bcrypt = require('bcrypt');
+var bcrypt = require('bcrypt-nodejs');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

@@ -4,13 +4,12 @@
   <p><a ui-sref="main">back to main</a></p>
   <p>uploads : {{ uploadNumber }} : {{ uploadSize }}</p>
   <p>downloads : {{ downloadNumber }} : {{ downloadSize }}</p>
-<!-- get ready for charts
-
-  <canvas id="line" class="chart chart-line" chart-data="data"
-  chart-labels="labels" chart-legend="true" chart-series="series"
-  chart-click="onClick" >
-  </canvas>
- -->
+  <div id="chartHolder">
+    <canvas id="line" class="chart chart-line" chart-data="data"
+    chart-labels="labels" chart-legend="true" chart-series="series"
+    chart-click="onClick" >
+    </canvas>
+  </div>
   <ul>
     <li ng-repeat="file in files"></li>
   </ul>
