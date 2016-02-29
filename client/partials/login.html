@@ -12,7 +12,7 @@
   </div>
   <br>
   <br>
-  <button class="ui button" id="loginButton" ng-click="login()">Submit</button>
+  <button class="ui button" id="loginButton" ng-click="load(); login()" ng-disabled="loading">Submit</button>
   <br>
   <br>
   <p ng-show="badLogin" style="color:red">Incorrect username and/or password</p>
