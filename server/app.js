@@ -30,9 +30,9 @@ app.post('/register/signin', function(req, res) {
   //query db to see if user exists
   db.query('select username, password from users where username = "' + req.body.username + '"', function(err, rows) {
     if (err) throw err;
-    var hash = rows[0].password;
     //if user found, compare PW input to hashed registration PW
     if (rows[0]) {
+      var hash = rows[0].password;
       bcrypt.compare(req.body.password, hash, function(err, result) {
         if (result) {
           res.send('success');
