@@ -27,4 +27,12 @@ angular.module('forinlanguages.signup', [])
     });
   };
 };
+
+$scope.isEnter = function(envent, func, arg){
+    console.log("listening to keys");
+    if(envent.keyCode===13){
+      func.apply(null, arg);
+    }
+  }
+
 });
