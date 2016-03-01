@@ -15,7 +15,7 @@ angular.module('forinlanguages.signup', [])
     if ($scope.newUser.signupPW.length < 8) {
       $scope.badLength = true;
     }
-    if ($scope.signupUN.length > 15 || $scope.newUser.signupUN.length < 5) {
+    if ($scope.newUser.signupUN.length > 15 || $scope.newUser.signupUN.length < 5) {
       $scope.badUsernameLength = true;
     }
     else {
