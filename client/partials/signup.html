@@ -15,6 +15,7 @@
   <div class="ui input">
     <input type="password" placeholder="password" ng-model="passwordTwo">
   </div>
+    <p ng-show="badLength" style"color: red">Password must be 6-15 characters</p>
     <p ng-show="passMatch" style="color: red">Passwords must match</p>
   <br>
   <br>
