@@ -15,7 +15,7 @@ angular.module('forinlanguages.signup', [])
       $scope.badLength = true;
     }
     else {
-    $scope.badLength = true;
+    $scope.badLength = false;
     $scope.passMatch = false;
     return $http({
       method: 'POST',
