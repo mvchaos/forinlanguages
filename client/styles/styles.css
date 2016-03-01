@@ -1,7 +1,9 @@
 textarea {
    resize: none;
 }
-
+#body{
+    background-color: #D0D0D0;
+}
 #chartHolder {
     width : 90%;
     margin : auto;
