@@ -10,6 +10,9 @@ angular.module('forinlanguages.signup', [])
     if ($scope.newUser.signupPW !== $scope.passwordTwo) {
       $scope.passMatch = true;
     }
+    if ($scope.newUser.signupUN.length < 4 || $scope.newUser.signupPW.length < 5) {
+      console.log('nah');
+    }
     else {
     $scope.passMatch = false;
     return $http({
