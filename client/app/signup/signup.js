@@ -6,13 +6,17 @@ angular.module('forinlanguages.signup', [])
   $scope.passMatch = false;
   $scope.newUser = {};
   $scope.badLength = false;
+  $scope.badUsernameLength = false;
   $scope.signup = function() {
     //handle new user submit
     if ($scope.newUser.signupPW !== $scope.passwordTwo) {
       $scope.passMatch = true;
     }
-    if ($scope.newUser.signupPW.length > 15 || $scope.newUser.signupPW.length < 5) {
+    if ($scope.newUser.signupPW.length < 8) {
       $scope.badLength = true;
+    }
+    if ($scope.signupUN.length > 15 || $scope.newUser.signupUN.length < 5) {
+      $scope.badUsernameLength = true;
     }
     else {
     $scope.badLength = false;

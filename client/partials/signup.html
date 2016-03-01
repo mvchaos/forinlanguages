@@ -5,6 +5,7 @@
     <input type="text" placeholder="username" ng-model="newUser.signupUN">
   </div>
   <p ng-show="alreadyRegistered" style="color: red">already registered</p>
+  <p ng-show="badUsernameLength" style="color: red">Username must be 6-15 characters</p>
   <br>
   <br>
   <div class="ui input">
@@ -15,7 +16,7 @@
   <div class="ui input">
     <input type="password" placeholder="password" ng-model="passwordTwo">
   </div>
-    <p ng-show="badLength" style"color: red">Password must be 6-15 characters</p>
+    <p ng-show="badLength" style="color: red">Password must be at least 8 characters</p>
     <p ng-show="passMatch" style="color: red">Passwords must match</p>
   <br>
   <br>
